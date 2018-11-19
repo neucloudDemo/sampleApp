@@ -15,7 +15,20 @@ module.exports = merge(webpackBaseConfig, {
         rules: [
             {
                 test: /\.(css|less)$/,
-                use: ['vue-style-loader', 'css-loader', 'less-loader']
+                use: [
+                    {
+                        loader: "vue-style-loader",
+                    },
+                    {
+                        loader: "css-loader",
+                    },
+                    {
+                        loader: "less-loader",
+                        options: {
+                            javascriptEnabled: true
+                        }
+                    }
+                ]
             }
         ]
     },
