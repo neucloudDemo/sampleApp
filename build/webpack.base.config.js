@@ -9,7 +9,7 @@ const NODE_ENV = `"${process.env.NODE_ENV ? process.env.NODE_ENV : 'development'
 let devUrl = `"${process.env.devUrl? process.env.devUrl : ''}"`;
 const uaaHost = `"${process.env.uaaHost ? process.env.uaaHost : 'http://uaa.yeseer.cn'}"`;
 const clientId = `"${process.env.clientId ? process.env.clientId : ''}"`;
-const mqttBrokerUrl = devUrl.substring(7)+'mqttws';
+const mqttBrokerUrl = devUrl.replace('http://','')+'mqttws';
 module.exports = {
     entry: {
         main: '@/main',
