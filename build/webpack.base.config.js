@@ -9,8 +9,9 @@ const NODE_ENV = `"${process.env.NODE_ENV ? process.env.NODE_ENV : 'development'
 let devUrl = `"${process.env.devUrl? process.env.devUrl : ''}"`;
 const uaaHost = `"${process.env.uaaHost ? process.env.uaaHost : 'http://uaa.yeseer.cn'}"`;
 const clientId = `"${process.env.clientId ? process.env.clientId : ''}"`;
-let baseUrl = devUrl.replace('http://','');
-let mqttBrokerUrl = `${baseUrl}mqttws`;
+// let baseUrl = devUrl.replace('http://','');
+// let mqttBrokerUrl = `${baseUrl}mqttws`;
+let mqttBrokerUrl = devUrl.replace('http://','');
 module.exports = {
     entry: {
         main: '@/main',
@@ -59,7 +60,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 use: 'babel-loader',
-                // exclude: /node_modules/
+                exclude: /node_modules/
             },
             {
                 test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
@@ -74,7 +75,7 @@ module.exports = {
                 devUrl: devUrl,
                 uaaHost: uaaHost,
                 clientId: clientId,
-                mqttBrokerUrl: mqttBrokerUrl,
+                mqttBrokerUrl: mqttBrokerUrl+'mqttws',
                 mqttTopic: 'sub/neucloud/websocket'
             }
         }),
