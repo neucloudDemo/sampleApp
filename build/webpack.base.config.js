@@ -6,10 +6,10 @@ const pkg = require('../package.json');
 const { resolve } = require('./utils');
 
 const NODE_ENV = `"${process.env.NODE_ENV ? process.env.NODE_ENV : 'development'}"`;
-const devUrl = `"${process.env.devUrl? process.env.devUrl : ''}"`;
+let devUrl = `"${process.env.devUrl? process.env.devUrl : ''}"`;
 const uaaHost = `"${process.env.uaaHost ? process.env.uaaHost : 'http://uaa.yeseer.cn'}"`;
 const clientId = `"${process.env.clientId ? process.env.clientId : ''}"`;
-
+const mqttBrokerUrl = devUrl.substr(devUrl.indexOf("//")+1)+'mqttws';
 module.exports = {
     entry: {
         main: '@/main',
@@ -73,7 +73,7 @@ module.exports = {
                 devUrl: devUrl,
                 uaaHost: uaaHost,
                 clientId: clientId,
-                mqttBrokerUrl: devUrl.substring(8,devUrl.length)+'mqttws',
+                mqttBrokerUrl: mqttBrokerUrl,
                 mqttTopic: 'sub/neucloud/websocket'
             }
         }),
