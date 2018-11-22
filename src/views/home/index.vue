@@ -58,7 +58,7 @@
         mounted() {
             this.chart = echarts.init(this.$refs.chart)
             if (mqttBrokerUrl && mqttTopic) {
-                this.connect(mqttBrokerUrl, mqttTopic)
+                this.connect(mqttBrokerUrl+'mqttws', mqttTopic)
             }
         },
         methods: {

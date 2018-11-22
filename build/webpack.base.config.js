@@ -9,8 +9,6 @@ const NODE_ENV = `"${process.env.NODE_ENV ? process.env.NODE_ENV : 'development'
 let devUrl = `"${process.env.devUrl? process.env.devUrl : ''}"`;
 const uaaHost = `"${process.env.uaaHost ? process.env.uaaHost : 'http://uaa.yeseer.cn'}"`;
 const clientId = `"${process.env.clientId ? process.env.clientId : ''}"`;
-// let baseUrl = devUrl.replace('http://','');
-// let mqttBrokerUrl = `${baseUrl}mqttws`;
 let mqttBrokerUrl = devUrl.replace('http://','');
 module.exports = {
     entry: {
@@ -75,7 +73,7 @@ module.exports = {
                 devUrl: devUrl,
                 uaaHost: uaaHost,
                 clientId: clientId,
-                mqttBrokerUrl: mqttBrokerUrl+'mqttws',
+                mqttBrokerUrl: mqttBrokerUrl,
                 mqttTopic: 'sub/neucloud/websocket'
             }
         }),
