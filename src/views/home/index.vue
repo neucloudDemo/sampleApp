@@ -57,12 +57,10 @@
         },
         mounted() {
             this.chart = echarts.init(this.$refs.chart)
-            console.log(baseUrl)
-            this.connect('kongapi-a7jexqgo.yeseer.cn/app1//mqtt', 'sub/neucloud/websocket')
+            this.connect(baseUrl + '/mqtt', 'sub/neucloud/websocket')
         },
         methods: {
             connect(brokerUrl, topic) {
-                console.log('11111111111')
                 let client = mqtt.connect(brokerUrl)
                 client.on('connect', () => {
                     client.subscribe(topic)
