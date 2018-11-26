@@ -58,7 +58,7 @@
         mounted() {
             this.chart = echarts.init(this.$refs.chart)
             console.log(baseUrl)
-            this.connect(baseUrl + '/mqtt', 'sub/neucloud/websocket')
+            this.connect('kongapi-a7jexqgo.yeseer.cn/app1//mqtt', 'sub/neucloud/websocket')
         },
         methods: {
             connect(brokerUrl, topic) {
