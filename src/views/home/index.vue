@@ -57,10 +57,12 @@
         },
         mounted() {
             this.chart = echarts.init(this.$refs.chart)
+            console.log(baseUrl)
             this.connect(baseUrl + '/mqtt', 'sub/neucloud/websocket')
         },
         methods: {
             connect(brokerUrl, topic) {
+                console.log('11111111111')
                 let client = mqtt.connect(brokerUrl)
                 client.on('connect', () => {
                     client.subscribe(topic)
