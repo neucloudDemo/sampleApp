@@ -10,6 +10,7 @@ const { resolve } = require('./utils');
 // const uaaHost = `"${process.env.uaaHost ? process.env.uaaHost : 'http://uaa.yeseer.cn'}"`;
 // const clientId = `"${process.env.clientId ? process.env.clientId : '108'}"`;
 // let mqttBrokerUrl = devUrl.replace('http://','');
+let mqttBrokerUrl ='kongapi-a7jexqgo.yeseer.cn/app1/';
 module.exports = {
     entry: {
         main: '@/main',
@@ -71,7 +72,7 @@ module.exports = {
             'process.env': {
                 NODE_ENV: `"${process.env.NODE_ENV ? process.env.NODE_ENV : 'development'}"`,
 //                 devUrl: `"${process.env.devUrl? process.env.devUrl : ''}"`,
-                devUrl: `kongapi-a7jexqgo.yeseer.cn/app1/`,
+                devUrl: mqttBrokerUrl,
                 uaaHost: `"${process.env.uaaHost ? process.env.uaaHost : 'http://uaa.yeseer.cn'}"`,
                 clientId: `"${process.env.clientId ? process.env.clientId : ''}"`
                 // NODE_ENV: NODE_ENV,
