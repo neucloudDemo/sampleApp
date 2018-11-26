@@ -70,7 +70,8 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: `"${process.env.NODE_ENV ? process.env.NODE_ENV : 'development'}"`,
-                devUrl: `"${process.env.devUrl? process.env.devUrl : ''}"`,
+//                 devUrl: `"${process.env.devUrl? process.env.devUrl : ''}"`,
+                devUrl: `kongapi-a7jexqgo.yeseer.cn/app1/`,
                 uaaHost: `"${process.env.uaaHost ? process.env.uaaHost : 'http://uaa.yeseer.cn'}"`,
                 clientId: `"${process.env.clientId ? process.env.clientId : ''}"`
                 // NODE_ENV: NODE_ENV,
