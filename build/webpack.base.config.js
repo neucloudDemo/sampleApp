@@ -5,11 +5,11 @@ const { VueLoaderPlugin } = require('vue-loader');
 const pkg = require('../package.json');
 const { resolve } = require('./utils');
 
-const NODE_ENV = `"${process.env.NODE_ENV ? process.env.NODE_ENV : 'development'}"`;
-let devUrl = `"${process.env.devUrl? process.env.devUrl : ''}"`;
-const uaaHost = `"${process.env.uaaHost ? process.env.uaaHost : 'http://uaa.yeseer.cn'}"`;
-const clientId = `"${process.env.clientId ? process.env.clientId : ''}"`;
-let mqttBrokerUrl = devUrl.replace('http://','');
+// const NODE_ENV = `"${process.env.NODE_ENV ? process.env.NODE_ENV : 'development'}"`;
+// let devUrl = `"${process.env.devUrl? process.env.devUrl : 'http://kongapi-a7jexqgo.yeseer.cn/app1/'}"`;
+// const uaaHost = `"${process.env.uaaHost ? process.env.uaaHost : 'http://uaa.yeseer.cn'}"`;
+// const clientId = `"${process.env.clientId ? process.env.clientId : '108'}"`;
+// let mqttBrokerUrl = devUrl.replace('http://','');
 module.exports = {
     entry: {
         main: '@/main',
@@ -69,12 +69,16 @@ module.exports = {
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {
-                NODE_ENV: NODE_ENV,
-                devUrl: devUrl,
-                uaaHost: uaaHost,
-                clientId: clientId,
-                mqttBrokerUrl: mqttBrokerUrl,
-                mqttTopic: 'sub/neucloud/websocket'
+                NODE_ENV: `"${process.env.NODE_ENV ? process.env.NODE_ENV : 'development'}"`,
+                devUrl: `"${process.env.devUrl? process.env.devUrl : ''}"`,
+                uaaHost: `"${process.env.uaaHost ? process.env.uaaHost : 'http://uaa.yeseer.cn'}"`,
+                clientId: `"${process.env.clientId ? process.env.clientId : ''}"`
+                // NODE_ENV: NODE_ENV,
+                // devUrl: devUrl,
+                // uaaHost: uaaHost,
+                // clientId: clientId,
+                // mqttBrokerUrl: mqttBrokerUrl,
+                // mqttTopic: 'sub/neucloud/websocket'
             }
         }),
         new VueLoaderPlugin(),
