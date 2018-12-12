@@ -51,7 +51,7 @@
                 },
                 data: [],
                 realtime: {
-                    'set1': {data: []}
+                    'power': {data: []}
                 }
             }
         },
